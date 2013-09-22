@@ -1,6 +1,6 @@
 Add email/password to both scripts.
 Run youtube.sh to collect you subscriptions and play.youtube.sh to play them.
-
+Uses youtube-dl, mplayer, wmctrl, etc.
 
 
                     GNU GENERAL PUBLIC LICENSE
