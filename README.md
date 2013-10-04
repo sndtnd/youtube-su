@@ -1,4 +1,7 @@
-Add email/password to both scripts.
+Add youtube email/password to ~/.youtube-su.rc
+Email first line.
+Password second line.
+
 Run youtube.sh to collect you subscriptions and play.youtube.sh to play them.
 Uses youtube-dl, mplayer, wmctrl, etc.
 
