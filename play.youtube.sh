@@ -28,7 +28,7 @@ wmctrl -r "$wid" -i -b toggle,sticky,above
 mapfile -t geo < <(wmctrl -l -G | grep -i "mplayer" )
 let dim1=$(echo ${geo[0]} | sed -e 's/ /,/g' | cut -d , -f5)
 let dim2=$(echo ${geo[0]} | sed -e 's/ /,/g' | cut -d , -f6)
-let x=$(xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c5-8)-${dim}-6
+let x=$(xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c5-8)-${dim1}-6
 #echo "0,$x,0,$(echo ${geo[0]} | sed -e 's/ /,/g' | cut -d , -f5),$(echo ${geo[0]} | sed -e 's/ /,/g' | cut -d , -f6)"
 wmctrl -r "$wid" -i -e "0,$x,0,${dim1},${dim2}"
 echo "mplayer made above and sticky"
