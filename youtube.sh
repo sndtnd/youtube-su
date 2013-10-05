@@ -7,6 +7,6 @@ password=$(echo "${creds[1]}")
 cd /tmp/
 mkdir youtube-su
 cd youtube-su
-echo "" > youtube.list
+echo -n "" > youtube.list
 time youtube-dl --max-quality 22 --prefer-free-formats --get-id -t -i -c -u "$email" -p "$password" http://www.youtube.com/feed/subscriptions >> youtube.list
 sed -i -e "s/-/\\-/g;s/\&/\\&/g;s/\'/\\'/g"
