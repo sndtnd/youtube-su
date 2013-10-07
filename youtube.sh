@@ -8,5 +8,5 @@ cd /tmp/
 mkdir youtube-su
 cd youtube-su
 echo -n "" > youtube.list
-time youtube-dl --max-quality 22 --prefer-free-formats --get-id -t -i -c -u "$email" -p "$password" http://www.youtube.com/feed/subscriptions >> youtube.list
-sed -i -e "s/-/\\-/g;s/\&/\\&/g;s/\'/\\'/g"
+time youtube-dl --get-id -t -i -c -u "$email" -p "$password" http://www.youtube.com/feed/subscriptions >> youtube.list
+sed -i -e "s/-/\\-/g;s/\&/\\&/g;s/\'/\\'/g" youtube.list

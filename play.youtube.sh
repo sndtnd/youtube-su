@@ -15,7 +15,7 @@ else
 echo "$(youtube-dl -e "http://youtube.com/watch?v=$i")" > /tmp/youtube-su/.current.youtube.txt
 echo "http://youtube.com/watch?v=$i" >> /tmp/youtube-su/.current.youtube.txt
 
-mplayer -vf scale=456:233 -cache 8912 -cookies -cookies-file /tmp/youtube-su/cookie.txt $(youtube-dl -u "$email" -p "$password" --prefer-free-formats -g --cookies \
+mplayer -vf scale=456:233 -cache 8912 -cookies -cookies-file /tmp/youtube-su/cookie.txt $(youtube-dl -u "$email" -p "$password" --prefer-free-formats --max-quality 22 -g --cookies \
 /tmp/youtube-su/cookie.txt "http://youtube.com/watch?v=$i") &
 mplayerpid=$!
 until wmctrl -l -p | grep -i "mplayer" &>/dev/null
