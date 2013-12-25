@@ -8,7 +8,7 @@ mapfile -t link < <(cat /tmp/youtube-su/youtube.list)
 for i in "${link[@]}"
 do
 #if grep "${i##*\?}" ~/.watched.youtube.txt
-if grep "$i" ~/.watched.youtube.txt
+if grep -e "$i" ~/.watched.youtube.txt
 then
 echo "Watched $i already"
 else
