@@ -1,9 +1,15 @@
 Add youtube email/password to ~/.youtube-su.rc
 Email first line.
 Password second line.
+Prefered Youtube Quality in youtube-dl form is third line.
 
-Run youtube.sh to collect your subscriptions and play.youtube.sh to play them.
-Uses youtube-dl, mplayer, wmctrl, etc.
+Run youtube.sh to collect your subscriptions, then play.youtube.sh to stream,
+or cache.youtube.sh to download to /tmp/youtub-su/video/ and then play.
+Uses youtube-dl, mpv*, wmctrl, etc.
+
+
+*Now uses mpv by default, because mplayer would hang at the end of videos 
+   (at least for some)
 
 
                     GNU GENERAL PUBLIC LICENSE

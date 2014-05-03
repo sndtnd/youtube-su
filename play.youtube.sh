@@ -7,7 +7,6 @@ password=$(echo "${creds[1]}")
 mapfile -t link < <(cat /tmp/youtube-su/youtube.list)
 for i in "${link[@]}"
 do
-#if grep "${i##*\?}" ~/.watched.youtube.txt
 if grep -e "$i" ~/.watched.youtube.txt
 then
 echo "Watched $i already"
@@ -15,7 +14,7 @@ else
 echo "$(youtube-dl -e "http://youtube.com/watch?v=$i")" > /tmp/youtube-su/.current.youtube.txt
 echo "http://youtube.com/watch?v=$i" >> /tmp/youtube-su/.current.youtube.txt
 
-mplayer -vf scale=456:233 -cache 8912 -cookies -cookies-file /tmp/youtube-su/cookie.txt $(youtube-dl -u "$email" -p "$password" --prefer-free-formats --max-quality 22 -g --cookies \
+mplayer scale=456:233 -cache 8912 -cookies -cookies-file /tmp/youtube-su/cookie.txt $(youtube-dl -u "$email" -p "$password" -g --cookies \
 /tmp/youtube-su/cookie.txt "http://youtube.com/watch?v=$i") &
 mplayerpid=$!
 until wmctrl -l -p | grep -i "mplayer" &>/dev/null
@@ -42,4 +41,3 @@ echo "" >> ~/.watched.youtube.txt
 
 fi
 done
-
